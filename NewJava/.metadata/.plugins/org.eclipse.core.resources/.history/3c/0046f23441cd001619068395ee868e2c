@@ -1,0 +1,15 @@
+package project2017;
+
+public class variables1 {
+	public static void main(String args[]){
+		double genre;
+		genre = 4.9;
+		
+		System.out.print("I want about\t");
+		System.out.print(genre);
+		System.out.println("movies to watch");
+		System.out.print("this holidays");
+		
+	}
+
+}

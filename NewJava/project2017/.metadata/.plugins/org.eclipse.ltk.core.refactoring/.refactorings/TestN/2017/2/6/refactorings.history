@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename compilation unit &apos;mytest.msp3.java&apos; to &apos;msp3test.java&apos;&#x0A;- Original project: &apos;TestN&apos;&#x0A;- Original element: &apos;mytest.msp3.java&apos;&#x0A;- Renamed element: &apos;mytest.msp3test.java&apos;" description="Rename compilation unit &apos;msp3.java&apos;" flags="2" id="org.eclipse.jdt.ui.rename.compilationunit" input="/src&lt;mytest{msp3.java" name="msp3test.java" references="false" stamp="1486317941666" version="1.0"/>
+</session>

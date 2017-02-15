@@ -1,0 +1,25 @@
+package project2017;
+
+public class ifstat1 {
+	public static void main(String args[]){
+		int test = 7;
+		int test2 = 10;
+		
+		if(test==9){
+			System.out.println("test is equal to 9");
+		}
+		else
+		{
+			System.out.println("test is not equal to 9");
+		}
+		
+		if(test<=9 || test2==10){
+			System.out.println("test is within range");
+		}
+		else
+		{
+			System.out.println("test is out of range");
+		}
+	}
+
+}

@@ -1,0 +1,48 @@
+package net.javavideotutorials.example;
+
+public class HumanBeing 
+{
+  private String name;
+  private Integer age;
+  
+  /* We could also use the null constructor with this keyword as follows;
+   * public HumanBeing()
+   * {
+   *   this("John Doe", 30);
+   */
+  
+  //default constructors
+  public HumanBeing()
+  {
+    name="John Doe";
+    age=30;
+  }
+  //constructor that takes in two parameters which will be set to whatever we want like above constructor
+  public HumanBeing(String name, Integer age)
+  {
+    this.name = name;
+    this.age = age;
+  }
+
+  public String getName() 
+  {
+    return name;
+  }
+
+  public void setName(String name) 
+  {
+    this.name = name;
+  }
+
+  public Integer getAge() 
+  {
+    return age;
+  }
+
+  public void setAge(Integer age) 
+  {
+    this.age = age;
+  }
+  
+}
+

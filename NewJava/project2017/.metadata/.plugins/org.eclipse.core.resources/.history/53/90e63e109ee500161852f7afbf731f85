@@ -1,0 +1,110 @@
+package exerciseOne;
+ 
+import java.util.List;
+import java.util.Scanner; 
+
+public class programOne {
+	static int count[] = new int[20]; 				//predecessors' Count array
+	static int n;
+	static int m=0;									//Set of n integers (vertices in graph)
+	static int output[] = new int[20]; 		    	//Storing items that have been picked in output array
+	static int next;  								//A reference to the next node
+	static int total;								//number of sorts 
+	static LinkedList succ[] = new LinkedList[20]; 	//Array of LinkedList for successor mapping
+	static bagSack bag = new bagSack(); 			//objects without predecessors container 
+	public programOne(){  							// default constructor 
+	   }  
+	
+	public static void main(String[] args)
+			{ 
+		 	  // i,j represents pairs in input, m is a pair and w is an arbitrary constant
+		  	  int i, j, w;
+		  	 	
+		  
+			  // Scanner input enable reading numbers from keyboard
+			  Scanner input = new Scanner(System.in);  
+			  
+			  // read  n the size of the array
+			  System.out.println("Enter input values:");
+			   n = input.nextInt();
+			   
+			  //initialize the arrays: output, count and succ
+			  for(w=1; w<=n; w=w+1)
+			  {
+				  topsorts.count[w]=0;
+				  topsorts.succ[w] = new LinkedList();
+			  }
+			  // start inputting pairs
+			  while(input.hasNext())
+			  {
+				  i=input.nextInt();
+				  j=input.nextInt();
+				  if(i==0 && j==0)
+				  {
+					  break;
+				  }
+				  topsorts.count[j] = topsorts.count[j]+1; //increase count[j] by 1
+				  topsorts.succ[i].add(j); //insert j to the LinkedList of i
+				  m = m + 1;
+			  }
+			 
+			input.close();
+			
+			// initialize bag
+			for (w = 1; w <= n; w = w + 1)
+			{
+			if (topsorts.count[w] == 0)  // Checking cases where there exist no predecessors, then we add into the bag
+				{
+					topsorts.bag.append(w);
+				}
+			}
+			
+    private void topsorts(){
+		if(bag.size >0)
+		{
+			int size = bag.size;
+		 	int x;
+		 	bagSack.Node current = bag.head;
+		 	bagSack.Node last = bag.head.prev;
+
+		 	while(current.next != bag.head)
+		 	{
+				current = current.next;
+				bag.remove(current);
+				output[next++] = current.data;
+				LinkedList.Node p = succ[current.data].head;
+				while(p !=null)
+				{
+					p = p.next;
+					count[p.data]--;
+					if(count[p.data] == 0)
+					{
+						bag.append(p.data);
+					}
+
+					topsorts();
+					p = succ[current.data].head;
+					while(p.next != null)
+					{
+						p = p.next;
+						count[p.data]++;
+					}
+
+					output[--next] = 0;
+					bag.restore(current);
+					bag.removeAllFrom(last, size);
+				}
+			}
+			
+				total++;
+				if(total < 50){
+					for(int k=0; k<next;k++){
+						System.out.println(output[k] + " ");
+						}
+					System.out.println();
+				}
+			
+		}
+	}
+
+

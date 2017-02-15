@@ -1,0 +1,7 @@
+package net.javavideotutorials.example;
+
+public class HumanBeing 
+{
+  public String name;
+  
+}

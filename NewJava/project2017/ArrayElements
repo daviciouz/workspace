@@ -1,0 +1,13 @@
+/* Array elements as counters */
+
+import java.util.Random;
+
+class ArrayElements{
+	public static void main(String[] args){
+/* define our random function */
+	Random rand = new Random();
+	
+	}
+	
+
+}

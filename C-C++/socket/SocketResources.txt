@@ -1,0 +1,6 @@
+http://beej.us/guide/bgnet/output/html/multipage/syscalls.html
+
+http://www.linuxhowtos.org/C_C++/socket.htm
+
+http://www.cs.rpi.edu/~moorthy/Courses/os98/Pgms/socket.html
+

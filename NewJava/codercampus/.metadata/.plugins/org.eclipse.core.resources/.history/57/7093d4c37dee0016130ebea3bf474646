@@ -1,0 +1,54 @@
+package net.javavideotutorials.example;
+
+import java.util.HashSet;
+import java.util.Set;
+
+public class HashSetExample {
+
+  public static void main(String[] args) {
+    // generally we favor programming to interface by being generic as possible.
+    // hence the hashset is a type of Set so easier to confirm from hashset to treeset
+    // instantiation
+    
+    // If we are consider with ordering of our input, when we print, we could change the HashSet to TreeSet without
+    // any compilation errors
+    
+    Set<Integer> myHashSet = new HashSet<Integer>();
+    
+    // This is going to be true because at this stage there is no data in our HashSet.
+    //
+    if(myHashSet.isEmpty())
+    {
+      System.out.println("My Hashset is empty at this stage");
+    }
+    
+    myHashSet.add(5);
+    myHashSet.add(10);
+    myHashSet.add(15);
+    myHashSet.add(20);
+    myHashSet.add(56);
+    myHashSet.add(25);
+    myHashSet.add(30);
+    
+    myHashSet.remove(3);      // Hashset does not use index so we need to put the exact value (or element) to remove
+    myHashSet.remove(20);      
+    
+    for(Integer i : myHashSet)
+    {
+      System.out.println(i + ",");
+    }
+    
+    // This if condition should be false hence the print statement will not appear in console
+    // because at this stage is data in our HashSet.
+    
+    myHashSet.clear();
+
+    //however if we clear the content and move the above if statement down, then it will appear
+    if(myHashSet.isEmpty())
+    {
+      System.out.println("Empty at this stage");
+    }
+    
+    
+}
+}

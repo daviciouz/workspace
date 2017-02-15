@@ -1,0 +1,18 @@
+package EnumExample;
+
+/**
+ * Comparing Java enum members 
+ * Use == (or !=) to Compare Java Enums
+ * Java.lang.Enum.compareTo()
+ * How to Compare Two Enum in Java
+ * == or equals with Java enum
+ * enum comparison in java
+ * enum comparison string java
+ */
+// create an enum 
+
+public enum enumExample3 {
+	 
+	GOOGLE, FACEBOOK, YAHOO, TWITTER, CRUNCHIFY
+ 
+}

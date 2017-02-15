@@ -1,0 +1,90 @@
+
+/*********************************************************************************************
+ * File(s): programTwo.java												     				 *
+ * Execution:  programTwo is the main class containing the main method 						 *
+ * 									 														 *
+ * *******************************************************************************************
+ * A modified mss4 to print out the maximum subsequence sum, input elements, first and last 
+ * position of the maximum subsequence sum.
+ * Time Complexities for this program O(n).
+ * */
+
+package exerciseTwo;
+
+import java.util.Scanner; 
+
+
+public class programTwo {
+	static int a[]; 						//Array a
+	static int maxsum;						//Maximum Subsequence Sum
+	static int sum;							//Sum at any instance
+	static int p1; 		    				//p1 reflect the starting boundary of the current subsequence to be evaluated
+	static int p2;  						//p2 reflect the ending boundary of the current subsequence to be evaluated
+	static int n;							//size of array
+	public programTwo(){  					//default constructor 
+	}
+
+	public static int MSS4( int a[] )
+    {
+        int maxSum = 0;
+        int Sum = 0;
+ 
+        for( int i = 1, j = 1; j < a.length; j++ )
+        {
+            Sum += a[ j ];
+            
+            System.out.println("Subsequence sum: " +Sum);
+            if( Sum > maxSum )
+            {
+                maxSum = Sum;
+                p1 = i;
+                p2 = j;
+            }
+            else if( Sum < 0 )
+            {
+                i = j + 1;
+                Sum = 0;
+            }
+        }
+        
+        return maxSum;
+    }
+    
+   public static void main(String[] args)
+   {
+	   	  Scanner input = new Scanner(System.in);
+	      int n;
+	   
+	      System.out.println("Enter the Array size N:");
+	      
+	      n = input.nextInt();
+	      int[] a = new int[n+1];
+	     
+	      for (int i=1; i<=n; i++)
+	      {
+	    	  a[i] =input.nextInt(); 
+	    	  
+	      }
+	      
+	      input.close();
+	      
+	      System.out.println("Input Elements: ");
+	      System.out.println("*******************************");
+	      
+	      for(int i =1; i<=n; i++)
+	      {
+	    	  System.out.print(a[i]+" ");
+	      }
+	      System.out.println("");
+	     
+	        maxsum = MSS4(a);
+	       
+	        System.out.println("*******************************");
+	        System.out.println("First position: " + p1);
+	        System.out.println("*******************************");
+	        System.out.println("Last  position: " + p2);
+	        System.out.println("*******************************");
+	        System.out.println( "Max sum is " + maxsum);
+	      
+	}
+   }

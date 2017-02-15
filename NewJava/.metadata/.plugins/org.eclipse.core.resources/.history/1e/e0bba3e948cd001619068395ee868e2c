@@ -1,0 +1,19 @@
+package project2017;
+
+public class mathoperation1 {
+	public static void main(String args[]){
+		int red, green, blue, 
+		int tcolor1,tcolor2,tcolor3,tcolor4, tcolor5;
+		red = 15;
+		green = 2;
+		blue = 3;
+		
+		tcolor1 = red + green;
+		tcolor2 = red - green;
+		tcolor3 = red * blue;
+		tcolor4 = red / blue;
+		tcolor5 = red % green;
+		
+	}
+
+}

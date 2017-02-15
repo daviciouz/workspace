@@ -1,0 +1,80 @@
+
+down vote
+	
+
+Rather than placing an extra scanner.nextLine() each time you want to read something, since it seems you want to accept each input on a new line, you might want to instead changing the delimiter to actually match only newlines (instead of any whitespace, as is the default)
+
+import java.util.Scanner;
+
+class ScannerTest {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        scanner.useDelimiter("\\n");
+
+        System.out.print("Enter an index: ");
+        int index = scanner.nextInt();
+
+        System.out.print("Enter a sentence: ");
+        String sentence = scanner.next();
+
+        System.out.println("\nYour sentence: " + sentence);
+        System.out.println("Your index: " + index);
+    }
+}
+
+Thus, to read a line of input, you only need scanner.next() that has the same behavior delimiter-wise of next{Int, Double, ...}
+
+The difference with the "nextLine() every time" approach, is that the latter will accept, as an index also <space>3, 3<space> and 3<space>whatever while the former only accepts 3 on a line on its own
+
+
+
+    
+
+this is my first program in JAVA and I'm having problem to understand this error
+
+Cannot make a static reference to the non-static field *
+
+and
+
+    Cannot make a static reference to the non-static method *
+
+public class Cerchio{
+
+   float r;
+   float area;
+   float cfr;
+   final double pi = 3.14;
+
+   public static void main(String[] args){
+      System.out.println("CIRCLE PROGRAM\n");
+      r = 5;
+      c_cfr();
+      c_area();
+      System.out.ptintln("The cir is: " + cfr);
+      System.out.println("The area is: " + area);
+
+
+SUGGESTED:
+
+public class Cerchio{
+
+  float r;
+  float area;
+  float cfr;
+  final double pi = 3.14;
+
+  public static void main(String[] args){
+    System.out.println("CIRCLE PROGRAM\n");
+
+    Cerchio cerchio = new Cerchio();
+    cerchio.r = 5;
+    cerchio.c_cfr();
+    cerchio.c_area();
+    System.out.ptintln("The cir is: " + cerchio.cfr);
+    System.out.println("The area is: " + cerchio.area);
+  }
+
+
+private float r;
+private float area;
+private float cfr;

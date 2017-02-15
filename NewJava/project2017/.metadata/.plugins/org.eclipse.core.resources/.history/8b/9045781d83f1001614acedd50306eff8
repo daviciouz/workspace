@@ -1,0 +1,64 @@
+import java.util.Scanner;
+import java.util.Scanner;
+
+
+public class PatternRecognizer
+{
+ArrayStack S = new ArrayStack(100);
+
+	public static void main(String[] args)
+	{
+		Scanner scan = new Scanner(System.in);
+		String input;
+	      
+		PatternRecognizer pr = new PatternRecognizer();
+		if (args.length < 1) 
+			{
+			System.out.println("Usage: PatternRecognizer <input string>");
+		
+			
+			input =scan.nextLine();
+	
+			}
+	      
+		else 
+		{
+		boolean inL = pr.recognize(args[0]);
+		if (inL) System.out.println(args[0] + " is in the language.");
+		else System.out.println(args[0] + " is not in the language.");
+		 }
+	}
+	
+	boolean recognize(String input){
+		int i=0; /* Current character indicator */
+		/* While c is not encountered, push the character onto the stack */
+		
+		while ((i < input.length()) && (input.charAt(i) != 'c'))
+		{
+			S.push(input.substring(i, i+1));
+			i++;
+		}
+		/* The end of the string is reached but no c is encountered */
+		if (i == input.length()) 
+			return false;
+		/* Discard c, move to the next character */
+			i++;
+		/* The last character is c */
+		if (i == input.length()) 
+			return false;
+			while (!S.isEmpty()){
+				/* If the input character and the one on top of the stack do not match */
+				if ( !(input.substring(i,i+1)).equals(S.pop()))
+					return false;
+				i++;
+			}
+			/* The stack is empty but the end of the string is not yet reached */
+		if ( i < input.length() ) 
+			return false;
+			/* The end of the string is reached but the stack is not empty */
+		else if ( (i == input.length()) && (!S.isEmpty()) )
+			return false;
+		
+		else return true;
+		}
+}

@@ -1,0 +1,35 @@
+package net.javavideotutorials.example;
+
+public class HumanBeing 
+{
+  private String name;
+  private Integer age;
+  
+  public HumanBeing()
+  {
+    name="John Doe";
+    age=30;
+  }
+
+  public String getName() 
+  {
+    return name;
+  }
+
+  public void setName(String name) 
+  {
+    this.name = name;
+  }
+
+  public Integer getAge() 
+  {
+    return age;
+  }
+
+  public void setAge(Integer age) 
+  {
+    this.age = age;
+  }
+  
+}
+

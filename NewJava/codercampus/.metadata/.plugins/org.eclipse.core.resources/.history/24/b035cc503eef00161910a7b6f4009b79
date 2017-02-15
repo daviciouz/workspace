@@ -1,0 +1,43 @@
+package net.javavideotutorials.example;
+
+public class Operators {
+
+  public static void main(String[] args) {
+    // ==, !=, <, >, <=, >=
+    
+    int age = 12;
+    
+    // AND &&
+    // true && true == true
+    // false && true == false
+    // true && false == false
+    // false && false == false
+    
+    // OR ||
+    // true || true == true
+    // false || true == false
+    // true || false == false
+    // false || false == false
+    
+    if (age >=13 && age <= 19)
+    {
+      System.out.println("You are a teenager");
+    }
+    else
+    {
+      System.out.println("You are not a teenager");
+    }
+    
+    // testing a condition with &&
+    // if we used only one & then we will have gotten a null pointer error
+    // because java will find out that the second statement is false whereas with the &&
+    // it evaluates the first and moves on
+    Object anObject = null;
+    
+    if (anObject != null && anObject.equals("2"))
+    {
+      System.out.println("Return nothing because statement is true");
+    }
+  }
+
+}

@@ -1,0 +1,28 @@
+package net.javavideotutorials.example;
+
+import java.util.HashSet;
+import java.util.Set;
+
+public class HashSetExample {
+
+  public static void main(String[] args) {
+    // generally we favor programming to interface by being generic as possible.
+    // hence the hashset is a type of Set so easier to confirm from hashset to treeset
+    // instantiation
+    
+    Set<Integer> myHashSet = new HashSet<Integer>();
+    
+    myHashSet.add(5);
+    myHashSet.add(10);
+    myHashSet.add(15);
+    myHashSet.add(20);
+    myHashSet.add(5);
+    myHashSet.add(25);
+    myHashSet.add(30);
+    
+    for(Integer i : myHashSet)
+    {
+      System.out.println(i + ",");
+    }
+}
+}

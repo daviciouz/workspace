@@ -1,0 +1,14 @@
+package EnumExample;
+
+/** NOTE: All enums implicitly extend java.lang.Enum. Since Java does not support multiple inheritance,
+ *  an enum cannot extend anything else.
+ * 
+ * NOTE: Enum in Java are type-safe: Enum has it own name-space. It means your enum will have a type
+ * for example “Company” in below example and you can not assign any value other than specified in Enum Constants.
+ * 
+ * public enum Company { EBAY, PAYPAL, GOOGLE, YAHOO, ATT
+	}
+	Company cName = Company.EBAY;
+	cName = 1;   // Compilation Error
+ *
+ */

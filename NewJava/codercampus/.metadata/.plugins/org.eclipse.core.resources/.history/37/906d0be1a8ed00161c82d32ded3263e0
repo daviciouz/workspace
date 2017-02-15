@@ -1,0 +1,26 @@
+package net.javavideotutorials.example;
+
+import java.util.ArrayList;
+import java.util.List;
+
+public class ArrayListExample {
+
+  public static void main(String[] args) 
+  {
+    //List accepts duplicates, it shrinks and grows without problem
+   
+    List<String> myArrayList = new ArrayList<String>();
+    
+    System.out.println("Is my list empty? " + myArrayList.isEmpty());
+    System.out.println("Let's put some stuff in! ");
+    
+    myArrayList.add("H");       // index 0
+    myArrayList.add("E");       // index 1
+    myArrayList.add("L");       // index 2
+    myArrayList.add("L");       // index 3
+    myArrayList.add("O");       // index 4
+    
+    
+  }
+
+}

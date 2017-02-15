@@ -1,0 +1,27 @@
+
+	
+	import java.util.Scanner;
+	import java.io.InputStream;
+
+	public class Largest_String1 
+	{
+	    public static void main(String[] args)
+	    {
+	         Scanner input=new Scanner(System.in);
+	         
+	         System.out.println("Please Enter The 5 Strings: ");
+
+	         String array[] = new String[5];
+
+	         for(int i=0; i<5; i++)
+	         {
+	            System.out.println("Enter String "+(i+1)+": ");
+	            String array[]=input.;
+	            if(array[i].length() >array[j].length() )
+	            {
+	       
+	            	System.out.println("The Largest String is "+ longest);
+	            }
+	         }
+	    }
+}

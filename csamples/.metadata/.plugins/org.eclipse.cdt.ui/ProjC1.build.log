@@ -1,0 +1,31 @@
+18:25:40 **** Incremental Build of configuration Debug for project ProjC1 ****
+make all 
+Building file: ../tutoria1.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"tutoria1.d" -MT"tutoria1.o" -o "tutoria1.o" "../tutoria1.cpp"
+Finished building: ../tutoria1.cpp
+ 
+Building target: ProjC1
+Invoking: GCC C++ Linker
+g++  -o "ProjC1"  ./tutoria1.o ./tutorial2.o ./tutorial3.o ./tutorial4.o ./tutorial5.o ./tutorial6.o   
+./tutorial2.o: In function `main':
+/home/stepsei/workspace/C-C++/cplusplus/Debug/../tutorial2.cpp:6: multiple definition of `main'
+./tutoria1.o:/home/stepsei/workspace/C-C++/cplusplus/Debug/../tutoria1.cpp:7: first defined here
+./tutorial3.o: In function `main':
+/home/stepsei/workspace/C-C++/cplusplus/Debug/../tutorial3.cpp:7: multiple definition of `main'
+./tutoria1.o:/home/stepsei/workspace/C-C++/cplusplus/Debug/../tutoria1.cpp:7: first defined here
+makefile:44: recipe for target 'ProjC1' failed
+./tutorial4.o: In function `main':
+/home/stepsei/workspace/C-C++/cplusplus/Debug/../tutorial4.cpp:9: multiple definition of `main'
+./tutoria1.o:/home/stepsei/workspace/C-C++/cplusplus/Debug/../tutoria1.cpp:7: first defined here
+./tutorial5.o: In function `main':
+/home/stepsei/workspace/C-C++/cplusplus/Debug/../tutorial5.cpp:7: multiple definition of `main'
+./tutoria1.o:/home/stepsei/workspace/C-C++/cplusplus/Debug/../tutoria1.cpp:7: first defined here
+./tutorial6.o: In function `main':
+/home/stepsei/workspace/C-C++/cplusplus/Debug/../tutorial6.cpp:9: multiple definition of `main'
+./tutoria1.o:/home/stepsei/workspace/C-C++/cplusplus/Debug/../tutoria1.cpp:7: first defined here
+collect2: error: ld returned 1 exit status
+make: *** [ProjC1] Error 1
+
+18:25:41 Build Finished (took 603ms)
+

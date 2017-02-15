@@ -1,0 +1,21 @@
+package net.javavideotutorials.example;
+
+public class DataStructures {
+  public static void main(String[] args){
+    char[] charArray = new char[5];
+    
+    charArray[0] = 'H';
+    charArray[1] = 'E';
+    charArray[2] = 'L';
+    charArray[3] = 'L';
+    charArray[4] = 'O';
+    
+    for(int i=0;i<5;i++){
+      System.out.println(charArray[i]);
+      }
+    for(int j=0;j<5;j++){
+    System.out.print(charArray[j]);
+    }
+  }
+
+}

@@ -1,0 +1,14 @@
+INDEX VERSION 1.127+/home/stepsei/workspace/NewJava/project2017/.metadata/.plugins/org.eclipse.jdt.core
+3120817716.index
+2295792494.index
+1398817537.index
+3422984410.index
+181632534.index
+1412680892.index
+3439646370.index
+610759575.index
+3443170566.index
+1410172696.index
+4262772984.index
+3124604304.index
+3395883707.index

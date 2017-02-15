@@ -1,0 +1,74 @@
+package exerciseOne;
+
+import java.util.ArrayList;
+import java.util.List;
+
+public class succList {
+	    List<Data> list = new ArrayList<Data>();
+	    Data[] data = new Data[10];
+	    
+	    public void addNewData(Data d)
+	    {
+	        for (int i =0 ; i < list.size(); i++)
+	        {
+	            Data oldData = list.get(i);
+	            if(oldData.getSuccData().getNumber() == 8)
+	            {
+	                list.remove(i);
+	                list.add(d);
+	                d.setSuccData(oldData);
+	            }
+	            
+	        }
+	    }
+	    public int count(Data d){
+	        int counter = 0;
+	        for (int i =0 ; i < list.size(); i++)
+	        {
+	            Data oldData = list.get(i);
+	            
+	            while (oldData.getSuccData() == null)
+	            
+	            if(oldData.getSuccData().getNumber() == 3)
+	            {
+	               counter++;
+	            }
+	            
+	            
+	        }
+	        return counter;
+	    }
+
+	}
+
+
+	public class Data
+	{
+
+	    private Data succData;
+	    private int number;
+
+	    public int getNumber()
+	    {
+	        return number;
+	    }
+
+	    public void setNumber(int number)
+	    {
+	        this.number = number;
+	    }
+
+	    public Data getSuccData()
+	    {
+	        return succData;
+	    }
+
+	    public void setSuccData(Data succData)
+	    {
+	        this.succData = succData;
+	    }
+	   
+	   
+	}
+
+}

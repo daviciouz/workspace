@@ -1,0 +1,14 @@
+package net.javavideotutorials.example;
+
+public class HashSetExample {
+
+  public static void main(String[] args) {
+    // generally we favor programming to interface by being generic as possible.
+    // hence the hashset is a type of Set so easier to confirm from hashset to treeset
+    
+    Set<Integer> myHashSet = new HashSet<Integer>();
+    
+
+  }
+
+}

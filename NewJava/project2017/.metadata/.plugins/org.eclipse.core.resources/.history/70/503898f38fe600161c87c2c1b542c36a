@@ -1,0 +1,132 @@
+ /*********************************************************************************************
+  * Files: programOne.java, bagSack.java, LinkedList.java									  *
+  * Execution: These three classes must be in the same package and the programOne is the main *
+  * class with the public static void main(String[] args).									  *
+  * *******************************************************************************************
+  * A recursive program, topsorts, that will generate ALL the topological sorts for 
+  * an input including the special cases of all permutations of 1, 2, . . . , n 
+  * and all multiset permutations.
+  * Time Complexities for certain operations:
+  * i.	 Initializing the bag - 0(n), n represent number of nodes without predecessors
+  * ii.	 Initializing predecessor count array. O(n) where n is the number of elements in the array (a Set S of n objects)
+  * iii. All bag operations are - O(1)
+  * iv.  Initializing successor LinkedList. O(n) where n is the number of nodes
+  * */
+
+package exerciseOne;
+
+import java.util.Scanner; 
+
+public class programOne {
+	static int count[]; 					//predecessors' Count array
+	static int n;							//a Set S of n objects
+	static int m;							//partial order given as m pairs
+	static int output[]; 		    		//Storing items that have been picked in output array
+	static int next;  						//position of last item in output
+	static int total;						//number of sorts 
+	static LinkedList succ[]; 				//Array of LinkedList for successor mapping
+	static bagSack bag; 					//objects without predecessors container 
+	public programOne(){  					// default constructor 
+	}
+
+	public static void topsorts()
+	{
+		if(bag.size > 0) {									  // if (bag is not empty)
+			int size = bag.size;
+			bagSack.Node current = bag.head;
+			bagSack.Node last = bag.head.prev;
+
+			while(current.next != bag.head)
+			{
+				current = current.next;
+				bag.remove(current);
+				output[next++] = current.data;  			   // assign current data to the position of last item in output
+				LinkedList.Node p = succ[current.data].head;
+				while(p.next != null)
+				{
+					p = p.next;
+					count[p.data]--;
+					if(count[p.data] == 0)
+					{
+						bag.append(p.data);					   // numbers with zero predecessor are placed into bag.
+					}
+				}
+				topsorts();
+				p = succ[current.data].head;
+				while(p.next != null)
+				{
+					p = p.next;
+					count[p.data]++;
+				}
+
+				output[--next] = 0;
+				bag.restore(current);
+				bag.removeAllFrom(last, size);
+			}
+		} else {
+
+			total++;
+			if(total < 50){
+				for(int k=0; k<next;k++){
+					System.out.print(output[k] + " ");
+				}
+				System.out.println();
+			}
+		}
+	}
+
+	public static void main(String[] args)
+	{ 
+		// i,j represents pairs(m) in input,w is an arbitrary constant
+		int i, j, w;
+
+
+		// Scanner input enable reading numbers from keyboard
+		Scanner input = new Scanner(System.in);  
+
+		// read  n the size of the array
+		System.out.println("Enter input values:");
+		n = input.nextInt();
+		count = new int[n+1];
+		output = new int[n+1];
+		next = 0;
+		total = 0;
+		succ = new LinkedList[n+1];
+		bag = new bagSack();
+		
+
+		//initialize the arrays: count and succ(array of LinkedList)
+		for(w=1; w<=n; w++)
+		{
+			count[w]=0;
+			succ[w] = new LinkedList();
+		}
+		// start inputting pairs
+		while(input.hasNext())
+		{
+			i=input.nextInt();
+			j=input.nextInt();
+			if(i==0 && j==0)
+			{
+				break;
+			}
+			count[j]++; 				//increase count[j] by 1
+			succ[i].add(j); 			//insert j to the LinkedList of i
+			m++;
+		}
+
+		input.close();
+
+		// initialize bag
+		for (w = 1; w <= n; w++)
+		{
+			if (count[w] == 0)        // Checking cases where there exist no predecessors, before adding into the bag
+			{
+				bag.append(w);
+			}
+		}
+		topsorts();
+		System.out.print(total);
+	}
+}
+

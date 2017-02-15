@@ -1,0 +1,34 @@
+package net.javavideotutorials.example;
+
+public class Operators {
+
+  public static void main(String[] args) {
+    // ==, !=, <, >, <=, >=
+    
+    int age = 12;
+    
+    // AND
+    // true && true == true
+    // false && true == false
+    // true && false == false
+    // false && false == false
+    
+    if (age >=13 && age <= 19)
+    {
+      System.out.println("You are a teenager");
+    }
+    else
+    {
+      System.out.println("You are not a teenager");
+    }
+    
+    // testing a condition with &&
+    Object anObject = null;
+    
+    if (anObject != null && anObject.equals("2"))
+    {
+      System.out.println("Return nothing because statement is true");
+    }
+  }
+
+}

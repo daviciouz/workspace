@@ -1,0 +1,10 @@
+package net.javavideotutorials.example;
+
+public class ThisKeyword {
+
+  public static void main(String[] args)
+  {
+      HumanBeing human = new HumanBeing();
+  }
+
+}

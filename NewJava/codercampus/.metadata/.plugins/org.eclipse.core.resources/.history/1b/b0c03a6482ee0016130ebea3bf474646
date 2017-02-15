@@ -1,0 +1,35 @@
+package net.javavideotutorials.example;
+
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
+public class HashMapExample {
+
+  public static void main(String[] args) {
+    //Map uses key, value pair
+    
+    Map<String, List<String>> countryMap = new  HashMap<String, List<String>>();
+    
+    List<String> regionList = new ArrayList<String>();
+    regionList.add("NY");
+    regionList.add("CA");
+    
+    countryMap.put("USA", regionList);
+    
+    regionList.clear();
+    regionList.add("ON");
+    regionList.add("AB");
+    
+    countryMap.put("Canada", regionList);
+    
+    // In the for loop, we can either use key or values to output our data
+    for(String key:countryMap.keySet())
+    {
+      System.out.println(key);
+    }
+
+  }
+
+}
